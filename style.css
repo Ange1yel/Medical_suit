@@ -60,3 +60,11 @@ html{scroll-behavior:smooth}
 #dialog .consent-group .consent{display:flex;align-items:flex-start;gap:9px}
 #dialog .consent-group__links{margin:0 0 0 26px;font-size:12px}
 @media(max-width:600px){#dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 24px);padding:20px 20px 24px}#dialog>p{font-size:15px}#form{gap:13px}}
+
+/* Social proof links in video story */
+#story .story-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+#story .story-links a{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:13px 19px;border:1px solid #d8bd91;border-radius:30px;color:#27201b;background:#fff9f4;font-size:14px;font-weight:500;text-decoration:none;transition:background .2s ease,border-color .2s ease}
+#story .story-links a:hover{background:#ffe8bb;border-color:#b58a51}
+#story .story-links a:focus-visible{outline:2px solid #b58a51;outline-offset:3px}
+#story .story-links a span{font-size:18px;line-height:1}
+@media(max-width:500px){#story .story-links{gap:9px}#story .story-links a{width:100%;justify-content:space-between}}
