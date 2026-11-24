@@ -21,7 +21,9 @@ function doPost(e) {
     const size = String(p.size || 'Пока не знаю').trim().slice(0, 20);
     const reqId = String(p.requestId || '').trim().slice(0, 100);
     const source = String(p.source || '').trim().slice(0, 300);
-    if (!name || !contact || !reqId || p.consent !== 'yes') throw new Error('Missing required fields');
+    const consentAt = String(p.consentAt || '').trim().slice(0, 40);
+    const consentVersion = String(p.consentVersion || '').trim().slice(0, 30);
+    if (!name || !contact || !reqId || p.consent !== 'yes' || !consentAt || !consentVersion) throw new Error('Missing required fields');
     if (!['Пока не знаю', 'XS', 'S', 'M', 'L', 'XL'].includes(size)) throw new Error('Invalid size');
     lock.waitLock(10000);
     const cache = CacheService.getScriptCache();
@@ -30,7 +32,7 @@ function doPost(e) {
     if (!sheet) throw new Error('Sheet missing');
     // Prevent formula injection and treat untrusted form input as text.
     const asText = s => "'" + s.replace(/[\r\n]/g, ' ');
-    sheet.appendRow([new Date(), asText(name), asText(contact), asText(size), asText(source), 'Новая', asText(reqId)]);
+    sheet.appendRow([new Date(), asText(name), asText(contact), asText(size), asText(source), 'Новая', asText(reqId), 'Да', asText(consentAt), asText(consentVersion)]);
     cache.put('lead_' + reqId, '1', 21600);
     notifyTelegram(name, contact, size);
     return ContentService.createTextOutput('ok');
