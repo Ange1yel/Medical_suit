@@ -1,6 +1,6 @@
 // Paste your deployed Google Apps Script /exec URL below, then commit this file.
 // Never put a Telegram bot token or other secrets in frontend JavaScript.
-const LEADS_ENDPOINT = "";
+const LEADS_ENDPOINT = "https://script.google.com/macros/s/AKfycbylSu0Dh5F_9wnx_dBMWwRiFMYrWLk52jfDj4dbWynhWunSs-y4SZpH6P5hiL6eoGY1/exec";
 const dialog = document.getElementById('dialog');
 const form = document.getElementById('form');
 const status = document.getElementById('status');
