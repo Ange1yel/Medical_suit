@@ -43,3 +43,20 @@ html{scroll-behavior:smooth}
 @media(max-width:740px){.site-footer{padding:64px 24px 42px}.site-footer .footer-inner{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 22px}.site-footer .footer-brand{grid-column:1 / -1;grid-row:auto}.site-footer .footer-contact{grid-column:auto}.site-footer .footer-to-top{right:24px;top:-29px;width:58px;height:58px}.site-footer .footer-column h2{margin-bottom:6px}.site-footer .footer-brand-tagline{margin-bottom:14px}}
 @media(max-width:420px){.site-footer .footer-inner{gap:28px 15px}.site-footer .footer-column h2,.site-footer .footer-contact-title{font-size:14px}.site-footer{font-size:12px}.site-footer .footer-copyright{font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.site-footer a,.site-footer .footer-cookie-button{transition:none}}
+
+/* Preorder modal: visible submit and sensible mobile scrolling */
+#dialog{box-sizing:border-box;width:min(440px,calc(100vw - 24px));max-height:min(90dvh,800px);overflow-y:auto;overscroll-behavior:contain;padding:24px 28px 30px;border-radius:22px}
+#dialog .dialog-close-form{display:block;text-align:right;margin:-8px -3px 12px}
+#dialog .dialog-close-form button{background:none;border:none;font-size:28px;line-height:1.2;cursor:pointer;padding:0 8px}
+#dialog h2{font-size:clamp(25px,4vw,32px);line-height:1.2;margin:0 0 12px}
+#dialog>p{margin:0 0 24px;line-height:1.45}
+#form{display:grid;gap:16px}
+#form label:not(.consent){display:grid;gap:8px}
+#form .preorder-submit{width:100%;display:block;font:inherit;font-weight:600;font-size:17px;padding:16px 22px;border-radius:14px;cursor:pointer}
+#form .preorder-submit:disabled{opacity:.65;cursor:progress}
+#status{display:block;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+#status:empty{display:none}
+#dialog .consent-group{display:grid;gap:7px}
+#dialog .consent-group .consent{display:flex;align-items:flex-start;gap:9px}
+#dialog .consent-group__links{margin:0 0 0 26px;font-size:12px}
+@media(max-width:600px){#dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 24px);padding:20px 20px 24px}#dialog>p{font-size:15px}#form{gap:13px}}
