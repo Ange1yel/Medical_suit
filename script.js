@@ -37,3 +37,18 @@ form.addEventListener('submit', async (event) => {
     submit.disabled = false;
   }
 });
+// Cookie preferences: no optional analytics are loaded by this site at present.
+(() => {
+  const banner = document.getElementById("cookieBanner");
+  if (!banner) return;
+  const storageKey = "medical_suit_cookie_choice_v1";
+  let choice = null;
+  try { choice = localStorage.getItem(storageKey); } catch (_) { /* storage disabled */ }
+  if (choice !== "accepted" && choice !== "necessary") banner.hidden = false;
+  function choose(value) {
+    try { localStorage.setItem(storageKey, value); } catch (_) { /* storage disabled */ }
+    banner.hidden = true;
+  }
+  document.getElementById("cookieAccept").addEventListener("click", () => choose("accepted"));
+  document.getElementById("cookieReject").addEventListener("click", () => choose("necessary"));
+})();
