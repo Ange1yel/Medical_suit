@@ -1,12 +1,18 @@
-# Medical Suit — landing page
+# Medical Suit — медицинская одежда
 
-Repository: https://github.com/Ange1yel/Medical_suit.github.io
+Репозиторий: https://github.com/Ange1yel/Medical_suit
 
-GitHub Pages (when configured to deploy from `main` / root):
-https://ange1yel.github.io/Medical_suit.github.io/medical-site/
+## GitHub Pages
 
-The HTML file is in `medical-site/index.html`; CSS and JS are alongside it. Images and video are in the repository-root `assets/` directory and are referenced using `../assets/...`.
+При публикации из ветки `main` и каталога `/(root)`:
+https://ange1yel.github.io/Medical_suit/medical-site/
 
-To publish: Settings → Pages → Build and deployment → Deploy from a branch → `main` → `/(root)` → Save.
+Основной файл лендинга: `medical-site/index.html`.
+Стили и скрипты: `medical-site/style.css`, `medical-site/script.js`.
+Фото и видео: `assets/` в корне репозитория. Относительные пути `../assets/...` корректны для адреса выше.
 
-The preorder form is not live until a Google Apps Script /exec endpoint is deployed and configured in `medical-site/script.js`. Do not claim submissions are received before testing.
+В корне репозитория также существует отдельный старый `index.html`, который не является медицинским лендингом. Он оставлен без изменений.
+
+Публикация: Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save.
+
+Форма предзаписи не принимает реальные заявки до публикации Google Apps Script и указания адреса /exec в `medical-site/script.js`.
