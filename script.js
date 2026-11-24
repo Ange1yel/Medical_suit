@@ -23,6 +23,8 @@ form.addEventListener('submit', async (event) => {
   data.set('source', window.location.href);
   data.set('requestId', (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
   data.set('createdAt', new Date().toISOString());
+  data.set('consentAt', new Date().toISOString());
+  data.set('consentVersion', '2026-11-25');
   submit.disabled = true;
   status.textContent = 'Отправляем заявку…';
   try {
