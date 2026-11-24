@@ -41,7 +41,7 @@ form.addEventListener('submit', async (event) => {
 (() => {
   const banner = document.getElementById("cookieBanner");
   if (!banner) return;
-  const storageKey = "medical_suit_cookie_choice_v1";
+  const storageKey = "medical_suit_cookie_choice_v2";
   let choice = null;
   try { choice = localStorage.getItem(storageKey); } catch (_) { /* storage disabled */ }
   if (choice !== "accepted" && choice !== "necessary") banner.hidden = false;
@@ -51,4 +51,5 @@ form.addEventListener('submit', async (event) => {
   }
   document.getElementById("cookieAccept").addEventListener("click", () => choose("accepted"));
   document.getElementById("cookieReject").addEventListener("click", () => choose("necessary"));
+  document.getElementById("cookieSettings")?.addEventListener("click", () => { banner.hidden = false; banner.scrollIntoView({behavior:"smooth",block:"nearest"}); });
 })();
